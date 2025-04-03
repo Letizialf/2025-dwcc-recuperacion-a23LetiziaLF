@@ -174,5 +174,3 @@ console.log("5" * "2"); // devolve 10 porque '5' e '2' son convertidos a Number
 
 // Os operadores teñen orde de precedencia, polo que se queremos utilizar varios nunha misma función, debemos ter en conta que o operador de maior precedencia se executará primeiro
 console.log(3 + 10 * 2); // mostra 23
-
-// ESTRUTURAS DE CONTROL -------------------------------------------
