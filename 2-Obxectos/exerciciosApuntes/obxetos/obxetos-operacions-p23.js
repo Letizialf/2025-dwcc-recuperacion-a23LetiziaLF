@@ -45,8 +45,22 @@ const futGame = {
 
 // a. Recorre o array futGame.scored e mostra por pantalla a información do xogador que marcou e o número de gol marcado: Gol 1: Lewandowski
 
-const scored = { futGame };
+const { scored } = futGame;
 
 scored.forEach((player, index) => {
   console.log(`Gol ${index + 1}: ${player}`);
 });
+
+// b. Crea un novo obxecto chamado scorers que conteña como propiedades o nome dos xogadores que marcaron gol e como valor o número de goles: {Lewandowski: 2}
+
+const scorers = {};
+
+for (const player of scored) {
+  if (Object.hasOwn(scorers, player)) {
+    scorers[player]++;
+  } else {
+    scorers[player] = 1;
+  }
+}
+
+console.log(scorers);
