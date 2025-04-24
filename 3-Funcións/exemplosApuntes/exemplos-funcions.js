@@ -1,4 +1,4 @@
-"use strict";
+'use strict';
 
 // As funcións son anacos de código deseñado para realizar unha tarefa, unha das vantaxes é que, si está ben descrita, pode ser reutilizada sen necesidade de volver a escribir o mesmo código unha e outra vez.
 // Á súa vez, tamén son moi boas para axudar a estructurar o código e mellorar a comprensión do mesmo
@@ -31,15 +31,15 @@ console.log(sumar(2)); //Dará 4 porque ao non especificarse un segundo parámet
 // A sintaxe dos parámetros rest permite que unha función acepte un número indeterminado de argumentos nun array
 // Solo o último parámetro pode ser o rest e vai precedido de '...'
 // Os arrays rest son arrays reais, polo que se lle poden aplicar métodos de arrays
-console.log("REST................................................");
+console.log('REST................................................');
 
 function myFun(a, b, ...manyMoreArgs) {
   console.log(`a = ${a}`); // a = one
   console.log(`b = ${b}`); // b, two
   // manyMoreArgs, ["three", "four", "five", "six"]
-  console.log("manyMoreArgs", manyMoreArgs);
+  console.log('manyMoreArgs', manyMoreArgs);
 }
-myFun("one", "two", "three", "four", "five", "six");
+myFun('one', 'two', 'three', 'four', 'five', 'six');
 
 function sum(...theArgs) {
   let total = 0;
@@ -55,7 +55,7 @@ console.log(sum(1, 2, 3, 4)); // expected output: 10
 // Ao contrario que rest (que recolle os múltiples argumentos e condensaos nun único array), spread expande o array nos seus elementos.
 // A sintaxe spread só pode utilizarse nos argumentos dunha función ou na construcción dun array
 
-console.log("SPREAD .............................................");
+console.log('SPREAD .............................................');
 
 // exemplo 1
 const array = [7, 8, 9];
@@ -76,3 +76,43 @@ function myFunction(a, b, c, d, e) {
 }
 const args = [0, 1];
 myFunction(-1, ...args, 2, ...[3]);
+
+// MÉTODOS DE ARRAYS: REDUCE ----------------------------------------------------------
+
+//
+/**
+ * Este método executa unha función redutora e devolverá un único valor
+ * Pode recibir 2 parámtros, unha función de callback e (opcionalmente) initialValue
+ * A función de callback pode ter ata 4 parámetros:
+ *  - accumulator: valor resultado da anterior iteracción, na primeira iteración o valor do acumulador será initialValue, se non se pasa este parámetro utilizarase o valor de array[0]
+ *  - currentValue: é o valor do elemento sobre o que sse itera actualmente, na primeira iteración terá o valor de array[0] pero se o initialValue non foi especificado collerase o valor de array[1] (porque array[0] estaría sendo utilizado como initialValue)
+ *  - currentIndex: é o índice do elemento sobre o que se itera actualmente, na primeira chamada será 0, pero, de novo, se non se especificou o initialValue colleráo valor do seguinte elemento (1, porque corresponde co curentValue, é dicir, é o index de currentValue)
+ *  - array: é o array de elementos
+ *
+ * O segundo parámetro que pode recibir reduce é o initialValue (opcional):
+ *  - Se se proporciona este parámetro: acumulator tomará dito valor, deixando para current value o valor de array[0] e, polo tanto, currentIndex será 0
+ *  - Se non se proporciona este parámetro: accumulator tomará o valor de array[0] polo que currentValue terá o valor de array[1] e o currentIndex será 1
+ */
+
+const arrayReduce = [1, 2, 3, 4, 5];
+
+function callBackReducer(accumulator, currentValue, index) {
+  const returns = accumulator + currentValue;
+  console.log(
+    `Acumulador: ${accumulator}\nCurrentValue: ${currentValue}\nIndex: ${index}\nRETURNS: ${returns}`
+  );
+  return returns;
+}
+
+let resultado = arrayReduce.reduce(callBackReducer);
+console.log(`Resultado pasando SOLO a fucion de callback: ${resultado}`); //15
+
+resultado = arrayReduce.reduce(callBackReducer, 0);
+console.log(`Resultado pasando tamén o initialValue: ${resultado}`); // 15
+
+resultado = arrayReduce.reduce(
+  (accumulator, currentValue, index) => accumulator + currentValue,
+  0
+);
+
+console.log(`Resultado con unha función flecha: ${resultado}`); // 15
