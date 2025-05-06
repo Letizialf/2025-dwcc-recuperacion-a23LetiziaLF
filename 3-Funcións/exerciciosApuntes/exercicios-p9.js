@@ -81,7 +81,7 @@ function comprobarDni(cadena) {
   let letras = "TRWAGMYFPDXBNJZSQVHLCKE";
   // Verificar formato básico (8 díxitos seguidos dunha letra)
   const regex = /^[0-9]{8}[A-Z]$/i;
-  if (!regex.test(dni)) {
+  if (!regex.test(cadena)) {
     return false;
   }
 
@@ -94,5 +94,6 @@ function comprobarDni(cadena) {
 
 console.log(`El DNI (98786547T) es: ${comprobarDni("98786547T")}`);
 console.log(`El DNI (35491833G) es: ${comprobarDni("35491833G")}`);
-console.log(`O DNI introducido é ${validarDNI("49402231W")}`);
+console.log(`O DNI introducido é ${comprobarDni("49402231W")}`);
+
 // EXERCICIO 8 ------------------------------------------------------------
