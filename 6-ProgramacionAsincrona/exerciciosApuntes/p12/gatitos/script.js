@@ -5,10 +5,10 @@
 // “Hai 8 gatiños: 5 femias e 3 macho
 
 // Esta función amosará información útil da resposta dada á request
-function reqListener() {
-  console.log(this.response);
-  // console.log(`Estado: ${this.status}`);
-}
+// function reqListener() {
+//   console.log(this.response);
+//   // console.log(`Estado: ${this.status}`);
+// }
 
 // Creamos a instancia do obxecto:
 const xhr = new XMLHttpRequest();
