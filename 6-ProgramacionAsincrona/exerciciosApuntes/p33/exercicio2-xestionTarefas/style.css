@@ -1,0 +1,30 @@
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #fffef5;
+}
+
+section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+article {
+  margin: 10px;
+  padding: 10px;
+  width: 60%;
+  border: solid;
+  border-radius: 10px;
+  text-align: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: 10px;
+}
+article.false {
+  background-color: rgb(235, 162, 162);
+}
+
+article.true {
+  background-color: rgb(194, 231, 193);
+}

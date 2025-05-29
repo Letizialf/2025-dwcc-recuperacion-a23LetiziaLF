@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="script.js" defer></script>
+    <link rel="stylesheet" href="style.css" />
+    <title>Users Posts</title>
+  </head>
+  <body>
+    <h1>Búsqueda de posts de usuarios</h1>
+    <div id="formularioDiv">
+      <form id="formulario">
+        <label for="caixaDeTexto">Introduce o id do usuario (1-10): </label>
+        <input type="text" name="idUser" id="idUser" />
+
+        <input
+          type="submit"
+          name="enviarRequest"
+          id="enviarRequest"
+          value="Enviar request"
+        />
+      </form>
+    </div>
+    <div id="posts"></div>
+  </body>
+</html>
