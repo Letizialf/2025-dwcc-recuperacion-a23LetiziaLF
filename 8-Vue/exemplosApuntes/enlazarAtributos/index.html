@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script type="module" src="script.js" defer></script>
+
+    <title>Enlazar atributos con Vue</title>
+  </head>
+  <body>
+    <div id="app">
+      <!-- O atributo dinámico que queremos asignar a este div está definido no compoñente de Vue, no estado reactivo do mesmo -->
+
+      <!-- Se o atributo que queremos enlazar é un id poñemos ':id', se o que queremos é unha clase poñemos ':class'-->
+      <div v-bind:id="dynamicId"></div>
+
+      <!-- Unha forma abreviada de utilizar a directiva v-bind é non poñer o nome da directiva, poñendo directamente o atributo que queremos crear e a asignación:  -->
+      <div :id="dynamicId"></div>
+
+      <!-- Se a propiedade do compoñente se chama igual que o atributo que queremos crear podemos abreviar aínda máis esta directiva: -->
+    </div>
+  </body>
+</html>
