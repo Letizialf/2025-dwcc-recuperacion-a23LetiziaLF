@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script type="module" src="script.js" defer></script>
+    <title>Modificadores de Eventos en Vue</title>
+  </head>
+  <body>
+    <!-- Vue proporciona modificadores de eventos para a directiva v-on (@) para así evitar poñer as instrucións en JS
+     -- stopPropagation = .stop --- detén a propagación do evento
+     -- preventDefault = .prevent --- non realiza a acción por defecto
+     --  .self --- só se executa o manexador de eventos se event.target é o propio elemento
+    -->
+    <div id="app">
+      <button @click="incrementar">{{ count }}</button>
+      <!-- Os modificadores de eventos poden encadearse, pero HAI QUE TER COIDADO CA ORDE: @click.prevent.self evita a acción por defecto no elemento e os seus descendentes, mentras que @click.self.prevent só evita a acción por defecto no propio elemento -->
+      <form v-on:submit.prevent="submitForm">
+        <input type="text" />
+        <button>Enviar</button>
+      </form>
+
+      <!-- Existen tamén modificadores de eventos para cada botón do rato, restrinxindo a execución do manexador ao uso dun botón especifico -->
+      <button @click.middle="decrement">
+        Restar, clickando na roda do rato
+      </button>
+    </div>
+  </body>
+</html>

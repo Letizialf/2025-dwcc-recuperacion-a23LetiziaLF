@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script type="module" src="script.js" defer></script>
+    <title>Directivas de Vue</title>
+  </head>
+  <body>
+    <div id="app">
+      <!-- v-if insertará ou eliminará o parágrafo en función do valor da expresión seen -->
+      <p v-if="seen">You can see me</p>
+
+      <!-- Algunhas directivas reciben un argumento logo do nome da directiva (directiva:arg), este corresponde co atributo a enlazar -->
+      <a :href="url"></a>
+    </div>
+  </body>
+</html>

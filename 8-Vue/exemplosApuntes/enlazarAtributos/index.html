@@ -18,6 +18,13 @@
       <div :id="dynamicId"></div>
 
       <!-- Se a propiedade do compoñente se chama igual que o atributo que queremos crear podemos abreviar aínda máis esta directiva: -->
+      <div :id></div>
+
+      <!-- No caso de atributos booleanos como 'checked' e 'disabled' que indican o seu valor mediante a súa presencia/ausencia a directiva v-bind é diferente-->
+      <button :disabled="isButtonDisabled"></button>
+
+      <!-- v-bind con un obxecto de atributos: -->
+      <div v-bind="objAttrs"></div>
     </div>
   </body>
 </html>

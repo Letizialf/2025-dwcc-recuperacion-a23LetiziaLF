@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script type="module" src="script.js" defer></script>
+    <title>Xestión de eventos en Vue</title>
+  </head>
+  <body>
+    <div id="app">
+      <!-- Con Vue tamén podemos ter eventos cuyo handler será un dos métodos que se declaren no script -->
+      <!-- Aquí, como non recibe parámetros personalizados, event pásase de forma automática e queda accesible dende ométodo que se executa ao darse o evento -->
+      <button @click="greet">Fai click, podo saudar!</button>
+      <p>'{{ message }}' aparece na consola</p>
+      <br />
+      <!-- Estos eventos tamén poden recibir parámetros dende o html (controlarase dende o script) -->
+      <button @click="say('Hello')">Fai click, falo!</button>
+      <p>{{ message2 }}</p>
+
+      <!-- Este exemplo, ao pasarse un parámetro personalizado, non recibe automáticamente a variable event, polo que temos que pasalo manualmente -->
+      <button @click="sayEvent('Hello Event', $event)">
+        Fai click, recibo event como parámetro!
+      </button>
+      <p>{{ messageEvent }}</p>
+    </div>
+  </body>
+</html>

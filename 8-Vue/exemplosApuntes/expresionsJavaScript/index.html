@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script type="module" src="script.js" defer></script>
+    <title>Usar expresións JS en Vue</title>
+  </head>
+  <body>
+    <!-- Para que algo se considere expresión temos que comprobar se se pode usar despois de 'return' -->
+
+    <div id="app">
+      <p>{{ number + 1 }}</p>
+      <!-- Da mesma maneira, non podemos utilizar bucles, solo operadores ternarios -->
+      <p>{{ ok ? 'YES' : 'NO' }}</p>
+      <p>{{ message.split('').reverse().join('') }}</p>
+      <div :id="`list-${id}`"></div>
+    </div>
+  </body>
+</html>
